@@ -1,0 +1,1 @@
+camera_set_view_size(VIEW, GAME_WIDTH, GAME_HEIGHT)
