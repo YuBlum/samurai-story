@@ -1,0 +1,5 @@
+enemy chase
+enemy hit
+enemy gun
+health
+recover
