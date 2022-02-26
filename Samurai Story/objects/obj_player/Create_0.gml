@@ -106,3 +106,14 @@ function attack() {
 		update_hit()
 	}
 }
+
+function recover() {
+	if (!knockout) {
+		var _other = instance_place(x, y, obj_recover)
+		if (_other != noone) {
+			instance_destroy(_other)
+			hp += irandom_range(5, 15)
+			hp = (hp > 100) ? 100 : hp
+		}
+	}
+}

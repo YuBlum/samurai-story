@@ -17,6 +17,7 @@ collider.y = y - sprite_height / 4
 collider.s = 8
 direction = irandom(360)
 image_angle = direction
+bullets = irandom_range(3, 10)
 
 function die() {
 	if (knockout) {
@@ -80,6 +81,7 @@ function attack_gun() {
 					instance_destroy()
 					other.hit = noone
 					other.alarm[2] = 30
+					other.bullets--
 				}
 			}
 		}

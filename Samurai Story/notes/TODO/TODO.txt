@@ -1,2 +1,2 @@
-recover
 pattern enemy
+enemy throw gun when run out of bullets
