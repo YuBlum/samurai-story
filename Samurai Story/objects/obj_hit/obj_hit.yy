@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_player_hit",
-    "path": "sprites/spr_player_hit/spr_player_hit.yy",
+    "name": "spr_hit",
+    "path": "sprites/spr_hit/spr_hit.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_player_hit",
+  "name": "obj_hit",
   "tags": [],
   "resourceType": "GMObject",
 }

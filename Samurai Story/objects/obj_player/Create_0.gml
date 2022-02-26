@@ -52,13 +52,13 @@ function update_hit() {
 function attack() {
 	if (hit == noone) {
 		if (mouse_check_button_pressed(mb_left) && can_hit) {
-			hit = instance_create_depth(x, y, -1, obj_player_hit)
-			alarm[0] = 20 // TODO: mudar isso para destroir quando a animação de ataque terminar.
+			hit = instance_create_depth(x, y, -1, obj_hit)
+			alarm[0] = 20 // TODO: mudar isso para destruir quando a animação de ataque terminar.
 			can_hit = false
 		}
 	} else {
 		with (obj_enemy) {
-			if (place_meeting(x, y, obj_player_hit)) {
+			if (place_meeting(x, y, obj_hit)) {
 				knockout = true
 			}
 		}

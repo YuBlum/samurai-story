@@ -5,6 +5,9 @@
 knockout = false
 chase = false
 
+hit = noone
+can_hit = true
+
 velx = 0
 vely = 0
 spd = 1.25
@@ -12,6 +15,8 @@ collider = {}
 collider.x = x - sprite_width / 2
 collider.y = y - sprite_height / 4
 collider.s = 8
+direction = irandom(360)
+image_angle = direction
 
 function die() {
 	if (knockout) {
@@ -19,14 +24,32 @@ function die() {
 	}
 }
 
+function update_hit() {
+	if (hit != noone) {
+		hit.direction = direction
+		hit.image_angle = direction
+		hit.x = x
+		hit.y = y
+	}
+}
+
+function attack() {
+	if (!knockout && distance_to_object(obj_player) <= 0.05 && hit == noone && can_hit) {
+		hit = instance_create_depth(x, y, 1, obj_hit)
+		alarm[1] = 20
+		can_hit = false
+	}
+	update_hit()
+}
+
 function chase_player() {
 	if(!knockout) {
 		if (!collision_line(x, y, obj_player.x, obj_player.y, obj_solid, false, false)) {
 			chase = true
 		} else if (chase && alarm[0] < 0) {
-			alarm[0] = 15
+			alarm[0] = 20
 		}
-		if (chase) {
+		if (chase && distance_to_object(obj_player) > 0.05) {
 			direction = point_direction(x, y, obj_player.x, obj_player.y)
 			image_angle = direction
 			
