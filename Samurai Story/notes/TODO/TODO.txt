@@ -1,3 +1,2 @@
-enemy gun
-health
 recover
+pattern enemy

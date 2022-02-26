@@ -24,13 +24,13 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"LayerId":{"name":"0e3d829a-dc6f-49d7-a5f0-6a6a1505cd52","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"LayerId":{"name":"610301c6-f2b0-443b-9f59-3a17f9839ce1","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_enemy_knockout","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"resourceVersion":"1.0","name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"LayerId":{"name":"0e3d829a-dc6f-49d7-a5f0-6a6a1505cd52","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"LayerId":{"name":"610301c6-f2b0-443b-9f59-3a17f9839ce1","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_player_knockout","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"resourceVersion":"1.0","name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_enemy_knockout","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},
+    "spriteId": {"name":"spr_player_knockout","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -42,7 +42,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f45ee0e9-55b3-4a27-8bba-0df9b857b682","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"7e80651d-8b2c-48e0-a993-ce639f4257ae","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6c0dbc7d-1158-4041-a95e-5e8b7fbeb67d","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -59,9 +59,9 @@
     "yorigin": 8,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_enemy_knockout","path":"sprites/spr_enemy_knockout/spr_enemy_knockout.yy",},
+    "parent": {"name":"spr_player_knockout","path":"sprites/spr_player_knockout/spr_player_knockout.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_enemy_knockout",
+    "name": "spr_player_knockout",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -75,7 +75,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_enemy_knockout",
+  "name": "spr_player_knockout",
   "tags": [],
   "resourceType": "GMSprite",
 }

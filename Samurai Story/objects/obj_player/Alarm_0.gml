@@ -1,3 +1,3 @@
 instance_destroy(hit)
 hit = noone
-alarm[1] = 15
+alarm[1] = 30
