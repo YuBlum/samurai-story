@@ -4,7 +4,7 @@ can_hit = true
 velx = 0
 vely = 0
 collider = {}
-collider.x = x - sprite_width / 2
+collider.x = x - sprite_width / 8
 collider.y = y - sprite_height / 4
 collider.s = 8
 hp = 100
@@ -12,6 +12,10 @@ knockback = false
 knockback_time = 10
 knockback_dir = 0
 knockout = false
+arm = spr_player_cut_down
+arm_subimage = 0
+arm_rot = 0
+arm_time = 0
 
 function die() {
 	knockout = hp <= 0
@@ -42,7 +46,7 @@ function force(_len, _dir) {
 	}
 	collider.y += vely
 	
-	x = collider.x + sprite_width / 2
+	x = collider.x + sprite_width / 8
 	y = collider.y + sprite_height / 4
 }
 
@@ -54,6 +58,10 @@ function move() {
 		var _dir = point_direction(0, 0, _movx, _movy)
 		var _len = ((_movx != 0) || (_movy != 0)) * spd
 		force(_len, _dir)
+		if (_len != 0) {
+			arm_time += 0.1
+			arm_rot = sin(arm_time) * 12
+		}
 	
 		direction = point_direction(x, y, mouse_x, mouse_y)
 		image_angle = direction
@@ -93,10 +101,16 @@ function attack() {
 		if (hit == noone) {
 			if (mouse_check_button_pressed(mb_left) && can_hit) {
 				hit = instance_create_depth(x, y, -1, obj_hit)
-				alarm[0] = 20 // TODO: mudar isso para destruir quando a animação de ataque terminar.
+				hit.sprite_index = spr_hit_player
+				hit.visible = false
 				can_hit = false
 			}
 		} else {
+			if (arm_subimage < 5 /* 6 = amount of frames */) {
+				if (alarm[3] < 0) alarm[3] = 2
+			} else if (alarm[0] < 0) {
+				alarm[0] = 5
+			}
 			with (obj_enemy) {
 				if (place_meeting(x, y, other.hit)) {
 					knockout = true

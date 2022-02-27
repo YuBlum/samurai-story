@@ -1,2 +1,9 @@
+player arm animation
+player sprite knockout
+enemy 1 sprite
+enemy 1 sprite punch
+enemy 1 sprite gun
+enemy 1 arm animation
+enemy 1 knockout
 pattern enemy
 enemy throw gun when run out of bullets
