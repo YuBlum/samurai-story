@@ -116,7 +116,11 @@ function attack() {
 			}
 			with (obj_enemy) {
 				if (place_meeting(x, y, other.hit)) {
-					knockout = true
+					hp--
+					if (hp <= 0) knockout = true
+					instance_destroy(other.hit)
+					other.hit = noone
+					other.alarm[1] = 30
 				}
 			}
 		}

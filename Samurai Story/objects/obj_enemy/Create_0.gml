@@ -18,6 +18,7 @@ collider.s = 8
 direction = irandom(360)
 image_angle = direction
 bullets = irandom_range(3, 10)
+hp = choose(1, 1, 1, 2, 2, 3)
 
 arm = gun ? spr_enemy_gun : spr_enemy_punch_down
 arm_subimage = 0
@@ -28,6 +29,18 @@ recoil_offset = 0
 
 legs = spr_enemy_legs
 legs_subimage = 0
+
+var _amount = irandom_range(3, 10)
+blood = []
+for (var i = 0; i < _amount; i++) {
+	var _dir = irandom(360)
+	var _len = irandom_range(2, 10)
+	blood[i] = {
+		i: irandom(5),
+		x: lengthdir_x(_len, _dir),
+		y: lengthdir_y(_len, _dir)
+	}
+}
 
 function force(_len, _dir) {
 	velx = lengthdir_x(_len, _dir)
@@ -58,6 +71,7 @@ function die() {
 		if (hit != noone) {
 			instance_destroy(hit)
 		}
+		depth = 10
 	}
 }
 

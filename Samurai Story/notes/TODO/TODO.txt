@@ -1,13 +1,23 @@
-enemy 1 knockout
-pattern enemy
-enemy throw gun sprite when run out of bullets
-blood when get hit or get killed
-camera
-sprite for recover
-hud for life
-floor 1
-floor 2
-floor 3
-floor 4
-floor 4
-floor 6 - boss
+hoje:
+	chests for recover
+	door
+
+amanhã:
+	camera
+	sprite for chests
+	sprite for recover
+	hud for life
+
+	shaders
+	blood particle
+	screen shake
+
+floor 1 - escritorio
+
+floor 2 - academia
+
+floor 3 - sauna
+
+floor 4 - frio??
+
+floor 5 - boss
