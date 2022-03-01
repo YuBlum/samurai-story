@@ -17,6 +17,9 @@ arm_subimage = 0
 arm_rot = 0
 arm_time = 0
 
+legs = spr_player_legs
+legs_subimage = 0
+
 function die() {
 	knockout = hp <= 0
 	if (knockout) {
@@ -61,6 +64,7 @@ function move() {
 		if (_len != 0) {
 			arm_time += 0.1
 			arm_rot = sin(arm_time) * 12
+			if (alarm[4] < 0) alarm[4] = 2
 		}
 	
 		direction = point_direction(x, y, mouse_x, mouse_y)
@@ -102,7 +106,6 @@ function attack() {
 			if (mouse_check_button_pressed(mb_left) && can_hit) {
 				hit = instance_create_depth(x, y, -1, obj_hit)
 				hit.sprite_index = spr_hit_player
-				hit.visible = false
 				can_hit = false
 			}
 		} else {

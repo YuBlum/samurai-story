@@ -1,9 +1,13 @@
-player arm animation
-player sprite knockout
-enemy 1 sprite
-enemy 1 sprite punch
-enemy 1 sprite gun
-enemy 1 arm animation
 enemy 1 knockout
 pattern enemy
-enemy throw gun when run out of bullets
+enemy throw gun sprite when run out of bullets
+blood when get hit or get killed
+camera
+sprite for recover
+hud for life
+floor 1
+floor 2
+floor 3
+floor 4
+floor 4
+floor 6 - boss
