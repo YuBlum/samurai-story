@@ -20,13 +20,29 @@ arm_time = 0
 legs = spr_player_legs
 legs_subimage = 0
 
+var _amount = irandom_range(3, 10)
+blood = []
+for (var i = 0; i < _amount; i++) {
+	var _dir = irandom(360)
+	var _len = irandom_range(2, 10)
+	blood[i] = {
+		i: irandom(5),
+		x: lengthdir_x(_len, _dir),
+		y: lengthdir_y(_len, _dir),
+		c: irandom_range(100, 200)
+	}
+}
 function die() {
-	knockout = hp <= 0
+	if (hp <= 0) {
+		knockout = true
+		hp = 0
+	}
 	if (knockout) {
 		sprite_index = spr_player_knockout
 		if (hit != noone) {
 			instance_destroy(hit)
 		}
+		depth = 10
 	}
 }
 
@@ -73,9 +89,10 @@ function move() {
 }
 
 function start_knockback(_dir) {
-	if (!knockout) {
+	if (!knockout && !knockback) {
 		knockback = true
 		knockback_dir = _dir
+		camera.shake(5, 2)
 	}
 }
 
@@ -121,6 +138,7 @@ function attack() {
 					instance_destroy(other.hit)
 					other.hit = noone
 					other.alarm[1] = 30
+					repeat (irandom_range(15, 30)) instance_create_depth(x, y, depth + 1, obj_part_blood)
 				}
 			}
 		}

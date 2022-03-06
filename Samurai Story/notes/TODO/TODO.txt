@@ -1,23 +1,21 @@
 hoje:
-	chests for recover
-	door
-
+	break
+	
+	+2 enemy skins
+	
 amanhã:
-	camera
-	sprite for chests
-	sprite for recover
-	hud for life
-
-	shaders
-	blood particle
-	screen shake
-
-floor 1 - escritorio
-
-floor 2 - academia
+	floor 1 - (escritorio) tileset
+	background
+	floor 1 level design
+	
+	break
+	
+	floor 2 - (academia) tileset
+	background
+	floor 2 level design
+	room transition
 
 floor 3 - sauna
-
 floor 4 - frio??
 
-floor 5 - boss
+floor 5 - boss 

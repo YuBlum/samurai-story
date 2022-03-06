@@ -38,7 +38,8 @@ for (var i = 0; i < _amount; i++) {
 	blood[i] = {
 		i: irandom(5),
 		x: lengthdir_x(_len, _dir),
-		y: lengthdir_y(_len, _dir)
+		y: lengthdir_y(_len, _dir),
+		c: irandom_range(100, 200)
 	}
 }
 
@@ -94,6 +95,7 @@ function attack_hand() {
 				if (place_meeting(x, y, other.hit) && !knockback) {
 					hp -= irandom_range(5, 15)
 					start_knockback(point_direction(other.x, other.y, x, y))
+					repeat (irandom_range(15, 30)) instance_create_depth(x, y, depth + 1, obj_part_blood)
 				}
 			}
 		}
@@ -120,7 +122,7 @@ function attack_gun() {
 		if (!knockout && recoil_offset != 0) {
 			force(-spd, direction)
 		}
-		if (!knockout && !collision_line(x, y, obj_player.x, obj_player.y, obj_solid, false, false)) {
+		if (!knockout && !collision_line(x, y, obj_player.x, obj_player.y, obj_solid, false, false) && !collision_line(x, y, obj_player.x, obj_player.y, obj_door, false, false)) {
 			direction = point_direction(x, y, obj_player.x, obj_player.y)
 			image_angle = direction
 			if (hit == noone && can_hit) {
@@ -137,10 +139,11 @@ function attack_gun() {
 				if (place_meeting(x, y, other.hit)) {
 					hp -= 25
 					start_knockback(point_direction(other.x, other.y, x, y))
+					repeat (irandom_range(15, 30)) instance_create_depth(x, y, depth + 1, obj_part_blood)
 				}
 			}
 			with (hit) {
-				if (instance_place(x, y, obj_solid) || instance_place(x, y, obj_player)) {
+				if (instance_place(x, y, obj_solid) || instance_place(x, y, obj_door) || instance_place(x, y, obj_player)) {
 					instance_destroy()
 					other.hit = noone
 					other.alarm[2] = 30
@@ -155,7 +158,8 @@ attack = gun ? attack_gun : attack_hand
 
 function chase_player() {
 	if(!knockout) {
-		if (!collision_line(x, y, obj_player.x, obj_player.y, obj_solid, false, false)) {
+		if (!collision_line(x, y, obj_player.x, obj_player.y, obj_solid, false, false) &&
+		    !collision_line(x, y, obj_player.x, obj_player.y, obj_door,  false, false)) {
 			chase = true
 		} else if (chase && alarm[0] < 0) {
 			alarm[0] = 20
@@ -166,6 +170,5 @@ function chase_player() {
 			force(spd, direction)
 			if (alarm[5] < 0) alarm[5] = 2
 		}
-		
 	}
 }
