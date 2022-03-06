@@ -1,21 +1,21 @@
 hoje:
-	break
-	
-	+2 enemy skins
-	
-amanhã:
+	floor 1 level design
 	floor 1 - (escritorio) tileset
 	background
-	floor 1 level design
 	
 	break
 	
-	floor 2 - (academia) tileset
-	background
 	floor 2 level design
+	floor 2 - (academia) tileset
+	
+	break
+	
 	room transition
 
 floor 3 - sauna
 floor 4 - frio??
 
-floor 5 - boss 
+floor 5 - boss
+title screen
+start cutscene
+end cutscene

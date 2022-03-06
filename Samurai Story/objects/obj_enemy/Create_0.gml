@@ -20,14 +20,17 @@ image_angle = direction
 bullets = irandom_range(3, 10)
 hp = choose(1, 1, 1, 2, 2, 3)
 
-arm = gun ? spr_enemy_gun : spr_enemy_punch_down
+enemy = choose(1, 2)
+sprite_index = enemy == 2 ? spr_enemy_2_skin : spr_enemy_1_skin
+
+arm = gun ? (enemy == 1 ? spr_enemy_1_gun : spr_enemy_2_gun) : (enemy == 1 ? spr_enemy_1_punch_down : spr_enemy_2_punch_down)
 arm_subimage = 0
 arm_rot = 0
 arm_time = 0
 start_punch = false
 recoil_offset = 0
 
-legs = spr_enemy_legs
+legs = enemy == 1 ? spr_enemy_1_legs : spr_enemy_2_legs
 legs_subimage = 0
 
 var _amount = irandom_range(3, 10)
@@ -68,7 +71,7 @@ function force(_len, _dir) {
 
 function die() {
 	if (knockout) {
-		sprite_index = spr_enemy_knockout
+		sprite_index = enemy == 1 ? spr_enemy_1_knockout: spr_enemy_2_knockout
 		if (hit != noone) {
 			instance_destroy(hit)
 		}
