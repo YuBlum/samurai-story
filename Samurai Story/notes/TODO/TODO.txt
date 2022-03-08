@@ -1,21 +1,19 @@
 hoje:
-	floor 1 level design
-	floor 1 - (escritorio) tileset
-	background
+	floor 3 level design
+	floor 3 - (sauna) tileset
 	
 	break
 	
-	floor 2 level design
-	floor 2 - (academia) tileset
+	floor 4 level design
+	floor 4 - (relaxamento) tileset
 	
 	break
 	
-	room transition
+	floor 5 - boss
+	boss patterns
 
-floor 3 - sauna
-floor 4 - frio??
-
-floor 5 - boss
-title screen
-start cutscene
-end cutscene
+amanhã:
+	title screen
+	start cutscene
+	end cutscene
+	music and sfxs

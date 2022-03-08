@@ -1,7 +1,13 @@
 prv_collide = collide
-collide = place_meeting(x, y, obj_player) || place_meeting(x, y, obj_enemy)
+var _enemy = instance_place(x, y, obj_enemy)
+collide = place_meeting(x, y, obj_player) || (_enemy != noone && !_enemy.knockout)
 if ((collide && !prv_collide) && spd <= 0) {
-	dir = obj_player.y < y ? -1 : 1
+	if (!hor) {
+		dir = obj_player.y < y ? -1 : 1
+	} else {
+		dir = obj_player.x > x ? -1 : 1
+	}
+
 	spd = 4
 }
 

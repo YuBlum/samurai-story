@@ -5,3 +5,4 @@ collide = false
 prv_collide = false
 max_time = 100
 mov = false
+depth = -10

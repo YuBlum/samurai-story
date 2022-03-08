@@ -1,0 +1,1 @@
+if (place_meeting(x, y, obj_player) && Enemy_Count <= 0) room_goto_next()

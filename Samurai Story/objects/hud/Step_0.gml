@@ -1,0 +1,1 @@
+game_over_offset = sin(current_time / 1000) * 10

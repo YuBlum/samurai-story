@@ -17,8 +17,7 @@ collider.y = y - sprite_height / 4
 collider.s = 8
 direction = irandom(360)
 image_angle = direction
-bullets = irandom_range(3, 10)
-hp = choose(1, 1, 1, 2, 2, 3)
+//bullets = irandom_range(3, 10)
 
 enemy = choose(1, 2)
 sprite_index = enemy == 2 ? spr_enemy_2_skin : spr_enemy_1_skin
@@ -32,6 +31,8 @@ recoil_offset = 0
 
 legs = enemy == 1 ? spr_enemy_1_legs : spr_enemy_2_legs
 legs_subimage = 0
+depth = 0
+Enemy_Count++
 
 var _amount = irandom_range(3, 10)
 blood = []
@@ -75,7 +76,7 @@ function die() {
 		if (hit != noone) {
 			instance_destroy(hit)
 		}
-		depth = 10
+		depth = 100
 	}
 }
 

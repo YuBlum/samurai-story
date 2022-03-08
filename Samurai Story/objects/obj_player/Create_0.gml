@@ -16,6 +16,7 @@ arm = spr_player_cut_down
 arm_subimage = 0
 arm_rot = 0
 arm_time = 0
+depth = 0
 
 legs = spr_player_legs
 legs_subimage = 0
@@ -124,6 +125,7 @@ function attack() {
 				hit = instance_create_depth(x, y, -1, obj_hit)
 				hit.sprite_index = spr_hit_player
 				can_hit = false
+				camera.shake(3, 1)
 			}
 		} else {
 			if (arm_subimage < 5 /* 6 = amount of frames */) {
@@ -134,7 +136,10 @@ function attack() {
 			with (obj_enemy) {
 				if (place_meeting(x, y, other.hit)) {
 					hp--
-					if (hp <= 0) knockout = true
+					if (hp <= 0 && !knockout) {
+						knockout = true
+						Enemy_Count--
+					}
 					instance_destroy(other.hit)
 					other.hit = noone
 					other.alarm[1] = 30
@@ -152,7 +157,7 @@ function recover() {
 		if (_other != noone) {
 			instance_destroy(_other)
 			hp += irandom_range(5, 15)
-			hp = (hp > 100) ? 100 : hp
+			//hp = (hp > 100) ? 100 : hp
 		}
 	}
 }
