@@ -1,0 +1,1 @@
+Enemy_Count = 0
