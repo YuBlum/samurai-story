@@ -100,6 +100,7 @@ function attack_hand() {
 					hp -= irandom_range(5, 15)
 					start_knockback(point_direction(other.x, other.y, x, y))
 					repeat (irandom_range(15, 30)) instance_create_depth(x, y, depth + 1, obj_part_blood)
+					if (!audio_is_playing(sfx_hit)) audio_play_sound(sfx_hit, 10, false)
 				}
 			}
 		}
@@ -135,6 +136,7 @@ function attack_gun() {
 				alarm[4] = 5
 				hit.direction = direction
 				can_hit = false
+				if (!audio_is_playing(sfx_shoot)) audio_play_sound(sfx_shoot, 10, false)
 				//alarm[1] = 20
 			}
 		}
@@ -144,6 +146,7 @@ function attack_gun() {
 					hp -= 25
 					start_knockback(point_direction(other.x, other.y, x, y))
 					repeat (irandom_range(15, 30)) instance_create_depth(x, y, depth + 1, obj_part_blood)
+					if (!audio_is_playing(sfx_hit)) audio_play_sound(sfx_hit, 10, false)
 				}
 			}
 			with (hit) {

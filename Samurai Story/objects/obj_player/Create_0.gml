@@ -144,6 +144,7 @@ function attack() {
 					other.hit = noone
 					other.alarm[1] = 30
 					repeat (irandom_range(15, 30)) instance_create_depth(x, y, depth + 1, obj_part_blood)
+					if (!audio_is_playing(sfx_hit)) audio_play_sound(sfx_hit, 10, false)
 				}
 			}
 		}
