@@ -1,18 +1,4 @@
 hoje:
 	break
 	
-	floor 4 level design
-	floor 4 - (relaxamento) tileset
-	
-	break
-	
-	transition between rooms
-	
-	floor 5 - boss
-	boss patterns
-
-amanhã:
-	title screen
-	start cutscene
-	end cutscene
 	music and sfxs

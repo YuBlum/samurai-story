@@ -20,16 +20,16 @@ image_angle = direction
 //bullets = irandom_range(3, 10)
 
 enemy = choose(1, 2)
-sprite_index = enemy == 2 ? spr_enemy_2_skin : spr_enemy_1_skin
+sprite_index = boss ? spr_enemy_3_skin : (enemy == 2 ? spr_enemy_2_skin : spr_enemy_1_skin)
 
-arm = gun ? (enemy == 1 ? spr_enemy_1_gun : spr_enemy_2_gun) : (enemy == 1 ? spr_enemy_1_punch_down : spr_enemy_2_punch_down)
+arm = gun ? (boss ? spr_enemy_3_gun : (enemy == 1 ? spr_enemy_1_gun : spr_enemy_2_gun)) : ( boss ? spr_enemy_3_punch_down : (enemy == 1 ? spr_enemy_1_punch_down : spr_enemy_2_punch_down))
 arm_subimage = 0
 arm_rot = 0
 arm_time = 0
 start_punch = false
 recoil_offset = 0
 
-legs = enemy == 1 ? spr_enemy_1_legs : spr_enemy_2_legs
+legs = boss ? spr_enemy_3_legs : (enemy == 1 ? spr_enemy_1_legs : spr_enemy_2_legs)
 legs_subimage = 0
 depth = 0
 Enemy_Count++
@@ -72,7 +72,7 @@ function force(_len, _dir) {
 
 function die() {
 	if (knockout) {
-		sprite_index = enemy == 1 ? spr_enemy_1_knockout: spr_enemy_2_knockout
+		sprite_index = boss ? spr_enemy_3_knockout : (enemy == 1 ? spr_enemy_1_knockout: spr_enemy_2_knockout)
 		if (hit != noone) {
 			instance_destroy(hit)
 		}

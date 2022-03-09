@@ -3,7 +3,7 @@ camera_set_view_size(VIEW, GAME_WIDTH, GAME_HEIGHT)
 var _x = camera_get_view_x(view_camera[0]), _y = camera_get_view_y(view_camera[0])
 
 // calculate the target position (player and mouse)
-var _tx, _ty, _dir2m, _dis2m, _limit
+var _tx = 0, _ty = 0, _dir2m = 0, _dis2m = 0, _limit = 0
 if (instance_exists(obj_player)) {
 	_tx = obj_player.x _ty = obj_player.y
 	_dir2m = point_direction(_tx, _ty, mouse_x, mouse_y)

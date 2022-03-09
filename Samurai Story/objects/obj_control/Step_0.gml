@@ -1,2 +1,7 @@
 //print(Enemy_Count)
-if (instance_exists(obj_player) && obj_player.knockout && keyboard_check_pressed(ord("R"))) room_restart()
+if (keyboard_check_pressed(vk_enter)&& (room == rm_start_2 || room == rm_start))
+	room_goto_next()
+else if (room == rm_end && keyboard_check_pressed(vk_enter))
+	game_end()
+else if (instance_exists(obj_player) && obj_player.knockout && keyboard_check_pressed(ord("R")))
+	room_restart()
